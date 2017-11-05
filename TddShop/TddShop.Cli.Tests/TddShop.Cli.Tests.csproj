@@ -59,6 +59,8 @@
     <Compile Include="Invoice\InvoiceSummaryBuilderTests.cs" />
     <Compile Include="Invoice\Mocks\InvoiceSenderMock.cs" />
     <Compile Include="Order\DiscountCalculatorTests.cs" />
+    <Compile Include="Order\OrderDeliveryDateTests.cs" />
+    <Compile Include="Order\OrderServiceTests.cs" />
     <Compile Include="Order\OrderSummaryBuilderTests.cs" />
     <Compile Include="ProgramTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
