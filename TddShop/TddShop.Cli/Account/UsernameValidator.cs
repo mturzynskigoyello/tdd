@@ -25,7 +25,20 @@ namespace TddShop.Cli.Account
 
         public UsernameValidationResult IsValid(string username)
         {
-            throw new NotImplementedException();
+            if (!IsValidName(username))
+            {
+                return UsernameValidationResult.InvalidUsername;
+            }
+            if (_usernameRepository.IsInUse(username))
+            {
+                return UsernameValidationResult.UsernameInUse;
+            }
+            return UsernameValidationResult.Ok;
+        }
+
+        private bool IsValidName(string username)
+        {
+            return username.All(x => char.IsLetterOrDigit(x));
         }
     }
 }

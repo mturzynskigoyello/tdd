@@ -20,8 +20,28 @@ namespace TddShop.Cli.Account
         /// <param name="password"></param>
         /// <returns></returns>
         public bool IsValid(string password)
-        {            
-            throw new NotImplementedException();
+        {
+            if (!password.Any(x => char.IsUpper(x)))
+            {
+                return false;
+            }
+            if (!password.Any(x => char.IsLower(x)))
+            {
+                return false;
+            }
+            if (!password.Any(x => char.IsDigit(x)))
+            {
+                return false;
+            }
+            if (!password.Any(x => !char.IsLetterOrDigit(x) || x == ' '))
+            {
+                return false;
+            }
+            if (password.Length < 10)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -15,17 +15,14 @@ namespace TddShop.Cli.Tests.Account
     public class UsernameValidatorTests
     {
         private UsernameValidator _target;
-        private UsernameRepositoryStub _usernameRepositoryStub;
         private Mock<IUsernameRepository> _moqUsernameRepositoryStub;
         
         [SetUp]
         public void Initialize()
         {
-            _usernameRepositoryStub = new UsernameRepositoryStub();
             _moqUsernameRepositoryStub = new Mock<IUsernameRepository>();
             
-            // start with custom stub, then show how to use Moq as a stub
-            _target = new UsernameValidator(_usernameRepositoryStub);
+            _target = new UsernameValidator(_moqUsernameRepositoryStub.Object);
         }
 
         [Test]
@@ -33,6 +30,7 @@ namespace TddShop.Cli.Tests.Account
         {
             // Arrange            
             var username = "johnsmith#";
+            _moqUsernameRepositoryStub.Setup(x => x.IsInUse(username)).Returns(false);
 
             // Act
             var result = _target.IsValid(username);
@@ -46,6 +44,7 @@ namespace TddShop.Cli.Tests.Account
         {
             // Arrange
             var username = "johnsmith";
+            _moqUsernameRepositoryStub.Setup(x => x.IsInUse(username)).Returns(true);
 
             // Act
             var result = _target.IsValid(username);
@@ -59,6 +58,7 @@ namespace TddShop.Cli.Tests.Account
         {
             // Arrange            
             var username = "johnsmith";
+            _moqUsernameRepositoryStub.Setup(x => x.IsInUse(username)).Returns(false);
 
             // Act
             var result = _target.IsValid(username);
