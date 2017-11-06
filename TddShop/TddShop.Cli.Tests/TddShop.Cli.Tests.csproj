@@ -56,7 +56,7 @@
     <Compile Include="Account\PasswordValidatorTests.cs" />
     <Compile Include="Account\Stubs\UsernameRepositoryStub.cs" />
     <Compile Include="Account\UsernameValidatorTests.cs" />
-    <Compile Include="Invoice\InvoiceSummaryBuilderTests.cs" />
+    <Compile Include="Invoice\InvoiceSenderTests.cs" />
     <Compile Include="Invoice\Mocks\InvoiceSenderMock.cs" />
     <Compile Include="Order\DiscountCalculatorTests.cs" />
     <Compile Include="Order\OrderDeliveryDateTests.cs" />

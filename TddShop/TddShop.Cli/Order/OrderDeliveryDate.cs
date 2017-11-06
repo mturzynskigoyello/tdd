@@ -20,7 +20,8 @@ namespace TddShop.Cli.Order
         /// Possible rules
         ///     * Minimum delivery date is 3 working days
         ///     * If ordered sooner than 13:00 count today as first day (assuming it's a working day)
-        ///     * If there are no enough items in stock add 5 working days
+        ///     * If there are no enough items in stock add 5 working days 
+        ///         (IStockRepository - that is what you need, you can find it under Repositories. PS - we don't need implementation of it, right?)
         ///     * Orders worth more than $500 needs approval from manager - add 2 more days
         ///     * Manager doesn't work on Fridays
         ///     

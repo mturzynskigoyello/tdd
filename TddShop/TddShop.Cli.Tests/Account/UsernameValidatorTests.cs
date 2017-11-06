@@ -15,21 +15,21 @@ namespace TddShop.Cli.Tests.Account
     public class UsernameValidatorTests
     {
         private UsernameValidator _target;
-        private UsernameRepositoryStub _usernameReposutoryStub;
+        private UsernameRepositoryStub _usernameRepositoryStub;
         private Mock<IUsernameRepository> _moqUsernameRepositoryStub;
         
         [SetUp]
         public void Initialize()
         {
-            _usernameReposutoryStub = new UsernameRepositoryStub();
+            _usernameRepositoryStub = new UsernameRepositoryStub();
             _moqUsernameRepositoryStub = new Mock<IUsernameRepository>();
             
             // start with custom stub, then show how to use Moq as a stub
-            _target = new UsernameValidator(_usernameReposutoryStub);
+            _target = new UsernameValidator(_usernameRepositoryStub);
         }
 
         [Test]
-        public void IsValid_UsernameContainsNonAlphanumericCharacters_ShourtReturnInvalid()
+        public void IsValid_UsernameContainsNonAlphanumericCharacters_ShouldReturnInvalid()
         {
             // Arrange            
             var username = "johnsmith#";
@@ -42,9 +42,9 @@ namespace TddShop.Cli.Tests.Account
         }
 
         [Test]
-        public void IsValid_UsernameAlreadyInUse_ShourtReturnInUse()
+        public void IsValid_UsernameAlreadyInUse_ShouldReturnInUse()
         {
-            // Arrange            
+            // Arrange
             var username = "johnsmith";
 
             // Act
@@ -55,7 +55,7 @@ namespace TddShop.Cli.Tests.Account
         }
 
         [Test]
-        public void IsValid_UsernameIsValidAndAvailable_ShourtReturnOk()
+        public void IsValid_UsernameIsValidAndAvailable_ShouldReturnOk()
         {
             // Arrange            
             var username = "johnsmith";

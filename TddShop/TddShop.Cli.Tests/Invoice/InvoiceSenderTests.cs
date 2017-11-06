@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace TddShop.Cli.Tests.Invoice
 {
     [TestFixture]
-    public class InvoiceSummaryBuilderTests
+    public class InvoiceSenderTests
     {
     }
 }
