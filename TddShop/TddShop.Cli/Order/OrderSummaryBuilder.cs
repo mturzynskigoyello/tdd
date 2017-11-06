@@ -18,7 +18,23 @@ namespace TddShop.Cli.Order
         /// <returns></returns>
         public string GetSummary(OrderModel order)
         {
-            throw new NotImplementedException();
+            var itemsCount = order.Items.Sum(x => x.Quantity);
+
+            if (itemsCount == 0)
+            {
+                return "There are no items in the order";
+            }
+
+            var summary = $"{itemsCount} item";
+            if (itemsCount > 1)
+            {
+                summary += "s";
+            }
+
+            var totalValue = order.Items.Sum(x => x.Price * x.Quantity);
+            summary += $" with total value of EUR {totalValue}";
+
+            return summary;
         }
     }
 }
