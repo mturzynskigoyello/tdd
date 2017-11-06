@@ -4,12 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TddShop.Cli.Order.Models;
+using TddShop.Cli.Order.Repositories;
 
 namespace TddShop.Cli.Order
 {
     public class OrderDeliveryDate
     {
         public OrderModel Order { get; private set; }
+
+        public IStockRepository StockRepository { get; set; }
 
         public OrderDeliveryDate(OrderModel order)
         {
@@ -34,9 +37,47 @@ namespace TddShop.Cli.Order
             return GetEstimatedDelivery(DateTime.Now);
         }
 
-        public DateTime GetEstimatedDelivery(DateTime fromDate)
+        public DateTime GetEstimatedDelivery(DateTime orderDate)
         {
-            return fromDate.AddDays(7);
+            var deliveryDate = orderDate.AddDays(3).Date;
+            if (orderDate.TimeOfDay < TimeSpan.FromHours(13))
+            {
+                deliveryDate = deliveryDate.AddDays(-1);
+            }
+
+            var allItemsAvailable = Order.Items.All(x => StockRepository.GetAvailableItemsByName(x.Name) > x.Quantity);
+            if (!allItemsAvailable)
+            {
+                deliveryDate = deliveryDate.AddDays(5);
+            }
+
+            var orderValue = Order.Items.Sum(x => x.Price * x.Quantity);
+            if (orderValue > 500)
+            {
+                deliveryDate = deliveryDate.AddDays(2);
+            }
+
+            if (deliveryDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                deliveryDate = deliveryDate.AddDays(1);
+            }
+
+            var date = deliveryDate.Date;
+            while (date >= orderDate)
+            {
+                if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+                {
+                    deliveryDate = deliveryDate.AddDays(1);
+                }
+                date = date.AddDays(-1);
+            }
+
+            if (deliveryDate.DayOfWeek == DayOfWeek.Sunday)
+            {
+                deliveryDate = deliveryDate.AddDays(1);
+            }
+
+            return deliveryDate;
         }
     }
 }
