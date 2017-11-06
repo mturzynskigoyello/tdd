@@ -9,7 +9,7 @@ namespace TddShop.Cli.Order.Repositories
     public interface IStockRepository
     {
         int GetAvailableItemsByName(string itemName);
-        int DecreaseItemsInStock(string itemName, int quantity);
+        void DecreaseItemsInStock(string itemName, int quantity);
         void IncreaseItemsInStock(string itemName, int quantity);
     }
 }

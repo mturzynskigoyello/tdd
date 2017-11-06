@@ -11,7 +11,8 @@ namespace TddShop.Cli.Order
     {
         /// <summary>
         /// Returns order summary in format: {number of items} item(s) with total value of {total value}
-        /// Please use "item" or "items" in result string accordingly to actual number of bought items
+        /// Please use "item" or "items" in result string accordingly to actual number of bought items.
+        /// In case order has no items the result string should be "There are no items in the order"
         /// </summary>
         /// <param name="order"></param>
         /// <returns></returns>

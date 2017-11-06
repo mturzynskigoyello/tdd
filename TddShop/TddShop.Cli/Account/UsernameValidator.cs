@@ -14,10 +14,6 @@ namespace TddShop.Cli.Account
         UsernameInUse
     }
 
-    /// <summary>
-    /// Somebody already wrote the tests for you.
-    /// Tests are great source of requirements - you can read from them how the class should work.
-    /// </summary>
     public class UsernameValidator
     {
         private readonly IUsernameRepository _usernameRepository;

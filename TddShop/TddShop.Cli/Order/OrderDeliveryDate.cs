@@ -31,7 +31,12 @@ namespace TddShop.Cli.Order
         /// <returns></returns>
         public DateTime GetEstimatedDelivery()
         {
-            return DateTime.Now.AddDays(7);
+            return GetEstimatedDelivery(DateTime.Now);
+        }
+
+        public DateTime GetEstimatedDelivery(DateTime fromDate)
+        {
+            return fromDate.AddDays(7);
         }
     }
 }
