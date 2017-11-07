@@ -14,6 +14,6 @@ namespace TddShop.Cli.Order.Repositories
         /// </summary>
         /// <param name="orderModel"></param>
         /// <returns></returns>
-        string SaveOrder(OrderModel orderModel);
+        void SaveOrder(OrderModel orderModel);
     }
 }

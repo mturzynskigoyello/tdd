@@ -25,7 +25,7 @@ namespace TddShop.Cli.Order
         /// <param name="order"></param>
         public void PlaceOrder(OrderModel order)
         {
-            foreach (var orderItem in order.Items)
+            foreach (var orderItem in order.Items.Where(x => x.Quantity > 0))
             {
                 _stockRepository.DecreaseItemsInStock(orderItem.Name, orderItem.Quantity);
             }
