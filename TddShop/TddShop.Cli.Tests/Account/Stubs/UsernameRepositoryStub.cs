@@ -16,5 +16,10 @@ namespace TddShop.Cli.Tests.Account.Stubs
         {
             return IsInUseResult || IsInUseResultPredicate(username);
         }
+
+        public void Create(string username, string password)
+        {
+            
+        }
     }
 }

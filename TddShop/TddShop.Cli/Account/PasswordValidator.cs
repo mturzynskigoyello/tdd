@@ -7,7 +7,12 @@ using TddShop.Cli.Account.Repositories;
 
 namespace TddShop.Cli.Account
 {
-    public class PasswordValidator
+    public interface IPasswordValidator
+    {
+        bool IsValid(string password);
+    }
+
+    public class PasswordValidator : IPasswordValidator
     {
         /// <summary>
         /// Password must meet at least 3 out of the following 4 complexity rules

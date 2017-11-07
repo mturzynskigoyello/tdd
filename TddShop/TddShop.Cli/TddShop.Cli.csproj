@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Account\PasswordValidator.cs" />
     <Compile Include="Account\Repositories\IUsernameRepository.cs" />
+    <Compile Include="Account\UserService.cs" />
     <Compile Include="Invoice\InvoiceSender.cs" />
     <Compile Include="Order\DiscountCalculator.cs" />
     <Compile Include="Order\Models\ItemModel.cs" />

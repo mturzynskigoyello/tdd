@@ -9,5 +9,6 @@ namespace TddShop.Cli.Account.Repositories
     public interface IUsernameRepository
     {
         bool IsInUse(string username);
+        void Create(string username, string password);
     }
 }
