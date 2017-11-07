@@ -14,7 +14,7 @@ namespace TddShop.Cli.Tests.Invoice.Mocks
         public string Subject { get; private set; }
         public string Body { get; private set; }
 
-        public override void SendEmail(string emailAddress, string subject, string body)
+        protected override void SendEmail(string emailAddress, string subject, string body)
         {
             EmailSent = true;
             EmailAddress = emailAddress;

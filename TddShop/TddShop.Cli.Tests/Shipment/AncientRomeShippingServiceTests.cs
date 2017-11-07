@@ -18,6 +18,7 @@ namespace TddShop.Cli.Tests.Shipment
         [SetUp]
         public void Initialize()
         {
+            _deliveryService = new Mock<IDeliveryService>();
             _target = new AncientRomeShippingService(_deliveryService.Object);
         }
     }
