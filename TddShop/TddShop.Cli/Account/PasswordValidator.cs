@@ -7,11 +7,6 @@ using TddShop.Cli.Account.Repositories;
 
 namespace TddShop.Cli.Account
 {
-    public interface IPasswordValidator
-    {
-        bool IsValid(string password);
-    }
-
     public class PasswordValidator : IPasswordValidator
     {
         /// <summary>

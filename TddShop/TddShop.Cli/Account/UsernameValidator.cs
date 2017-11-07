@@ -14,11 +14,6 @@ namespace TddShop.Cli.Account
         UsernameInUse
     }
 
-    public interface IUsernameValidator
-    {
-        UsernameValidationResult IsValid(string username);
-    }
-
     public class UsernameValidator : IUsernameValidator
     {
         private readonly IUsernameRepository _usernameRepository;
