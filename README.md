@@ -14,6 +14,6 @@ Prezentację w formacie .pdf znajdziecie na repozytorium w folderze *presentatio
 * Prosimy o umieszczeniu kodu na GitHubie i wysłanie linku do nas (mateusz.turzynski@goyello.com lub michal.michalczuk@goyello.com)
 * Najłatwiej zacząć robiąc forka naszego repozytorium
 * Na zgłoszenia czekamy do 15.11.2017 do północy
-* Pierwsze miejsce wygrywa...
-* Dwa wyróżnienia wygrywają...
+* Pierwsze miejsce wygrywa **bon do Saturna o wartości 200zł**
+* Dwa wyróżnienia wygrywają **bon do Saturna o wartości 50zł**
 * Wyniki konkursu poznacie 20.11.2017
