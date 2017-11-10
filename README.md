@@ -1,5 +1,8 @@
 # Test-Driven Development Workshops - Lider Workshops Day 2017
 
+## Kod z rozwiązanymi zadaniami
+Wszystko i jeszcze więcej, co przerobiliśmy na warsztatach znajdziesz na branchu `develop`, [tutaj znajdziesz podgląd](https://github.com/mturzynskigoyello/tdd/blob/develop/TddShop).
+
 ## Prezentacja
 Prezentację w formacie .pdf znajdziecie na repozytorium w folderze *presentation* lub pod [tym linkiem](/presentation/goyello_TDD.pdf).
 
